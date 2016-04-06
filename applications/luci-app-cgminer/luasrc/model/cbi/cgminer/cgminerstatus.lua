@@ -17,8 +17,8 @@ $Id$
 btnref = luci.dispatcher.build_url("admin", "status", "cgminerstatus", "restart")
 f = SimpleForm("cgminerstatus", translate("Cgminer Status") ..
 		    "  <input type=\"button\" value=\" " .. translate("Restart Cgminer") .. " \" onclick=\"location.href='" .. btnref .. "'\" href=\"#\"/>",
-		    translate("Please visit <a href='https://ehash.com/support'> https://ehash.com/support</a> for support,"..
-		    "visit <a href='http://downloads.canaan-creative.com'>http://downloads.canaan-creative.com</a> for firmware download."))
+		    translate(""..
+		    ""))
 
 f.reset = false
 f.submit = false
@@ -50,7 +50,7 @@ t2:option(DummyValue, "stale", translate("Stale"))
 t2:option(DummyValue, "lastsharetime", translate("LST"))
 t2:option(DummyValue, "lastsharedifficulty", translate("LSD"))
 
-t1 = f:section(Table, luci.controller.cgminer.devs(), translate("Avalon Devices"))
+t1 = f:section(Table, luci.controller.cgminer.devs(), translate("Devices"))
 t1:option(DummyValue, "name", translate("Device"))
 t1:option(DummyValue, "enable", translate("Enabled"))
 t1:option(DummyValue, "status", translate("Status"))
@@ -88,7 +88,7 @@ end
 t1:option(DummyValue, "lvw", translate("LastValidWork"))
 
 local stats = luci.controller.cgminer.stats()
-t1 = f:section(Table, stats, translate("Avalon Devices Status"))
+t1 = f:section(Table, stats, translate("Devices Status"))
 indicator = t1:option(Button, "_indicator", translate("Indicator"))
 function indicator.render(self, section, scope)
         if stats[section].led == '0' then
