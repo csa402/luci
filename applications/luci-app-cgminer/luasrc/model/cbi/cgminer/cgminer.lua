@@ -28,12 +28,9 @@ pb:value("--balance", translate("Balance"))
 pb:value("--load-balance", translate("Load Balance"))
 pb:value("  ", translate("Failover"))
 
-cf = conf:option(Value, "chip_frequency", translate("Chip Maximum Frequency(Range: 100-500, Default: 500)"))
-cf.default = "500"
+cf = conf:option(Value, "chip_frequency", translate("Chip Frequency(Range: 100-500, Default: 150)"))
+cf.default = "150"
 cf.datatype = "range(100, 500)"
-
-fan = conf:option(Value, "fan", translate("Minimum Fan%(Range: 10-100, Default: 20%)"))
-fan.datatype = "range(10, 100)"
 
 api_allow = conf:option(Value, "api_allow", translate("API Allow(Default: W:127.0.0.1)"))
 more_options = conf:option(Value, "more_options", translate("More Options"))

@@ -18,7 +18,6 @@ function index()
 	entry({"admin", "status", "cgminer"}, cbi("cgminer/cgminer"), _("Cgminer Configuration"), 90)
 	entry({"admin", "status", "cgminerapi"}, call("action_cgminerapi"), _("Cgminer API Log"), 91)
 	entry({"admin", "status", "cgminerstatus"}, cbi("cgminer/cgminerstatus"), _("Cgminer Status"), 92)
-	entry({"admin", "status", "mmupgrade"}, call("action_mmupgrade"), _("MM Upgrade"), 93)
 	entry({"admin", "status", "checkupgrade"}, call("action_checkupgrade"), nil).leaf = true
 	entry({"admin", "status", "cgminerstatus", "restart"}, call("action_cgminerrestart"), nil).leaf = true
 	entry({"admin", "status", "set_miningmode"}, call("action_setminingmode"), nil).leaf = true
